@@ -1,4 +1,28 @@
-
+const array2 = [
+    {
+        NUMIDENTIFIACDOR:'209',
+        NOMBRE:'Tiro a la cesta',
+        NOMBREJUS:'Tiro perfecto',
+        AREA:'Deportes',
+        COSTOREAL:'$20',
+        COSTOAPROXIMADO:'$0',
+        REMANENTE:'Profeso',
+        MESPLANIFICACION:'MAYO',
+        JUSTIFICACION:'Falló de tiró',
+        PROGRAMAEDUCATIVO:'Deporte',
+        PERIODOAPLICACION:'Cuatrimestre',
+        NUMDOCENTE:'5',
+        FECHAFINAL:'AGOSTO',
+        ESTADO:'Programación',
+        M:'1',
+        H:'3',
+        T:'4',
+        NOMBREEJECUCION:'Basketball',
+        EVIDENCIAS:'Certificados'
+        
+    }
+    
+]
 
 const array=[
         {
@@ -151,6 +175,44 @@ const array=[
 			],
         ]
     })
+    
+    
+    /////////////////////////////////////////////////
+    
+    const body1Propuesta3 = array2.map( item => {
+    return {
+          table: {
+              widths: [180,180,180,180],
+              body: [
+                  [{text: 'Número identificador', style: 'costTableHeader', colSpan: 1, alignment: 'rigth',fillColor: '#cccccc'},{text: item.NUMIDENTIFIACDOR.toString(),  style: 'content', fit: true,colSpan:3},{},{}],
+                  [{text: 'Planeación', colSpan: 2, alignment: 'rigth',fillColor: '#cccccc'},{},{text: 'Ejecución', colSpan: 2, alignment: 'rigth',fillColor: '#cccccc'},{}],
+                  [{text:'Nombre', style: 'tableHeader'}, {text: item.NOMBRE.toString(),  style: 'content', fit: true},{text:'Nombre', style: 'tableHeader'}, {text: item.NOMBREJUS.toString(),  style: 'content', fit: true}],
+                  [{text:'Área', style: 'tableHeader'}, {text: item.AREA.toString(),  style: 'content', fit: true},{text:'Costo Real', style: 'tableHeader'}, {text: item.COSTOREAL.toString(),  style: 'content', fit: true}],
+                  [{text:'Costo aproximado', style: 'tableHeader'}, {text: item.COSTOAPROXIMADO.toString(),  style: 'content', fit: true},{text:'Remanente', style: 'tableHeader'}, {text: item.REMANENTE.toString(),  style: 'content', fit: true}],
+                  [{text:'Mes de planificación', style: 'tableHeader'}, {text: item.MESPLANIFICACION.toString(),  style: 'content', fit: true},{text:'Justificación', style: 'tableHeader'}, {text: item.JUSTIFICACION.toString(),  style: 'content', fit: true}],
+                  [{text:'Programa educativo', style: 'tableHeader'}, {text: item.PROGRAMAEDUCATIVO.toString(),  style: 'content', fit: true},{text:'Periodo de aplicación', style: 'tableHeader'}, {text: item.PERIODOAPLICACION.toString(),  style: 'content', fit: true}],
+                  [{text:'Número de docentes', style: 'tableHeader'}, {text: item.NUMDOCENTE.toString(),  style: 'content', fit: true},{text:'Fecha de finalización', style: 'tableHeader'}, {text: item.FECHAFINAL.toString(),  style: 'content', fit: true}],
+                  [{text:'Estado'}, {text: item.ESTADO.toString(),  style: 'content', fit: true},{text:'Participantes'},{
+                              table: {
+                                  widths: ['*','*','*'],
+                                  body: [
+                                      [
+                                          {text:'H', alignment: 'center', style: 'subHeadertable'},
+                                          {text:'M', alignment: 'center', style: 'subHeadertable'},
+                                          {text:'T', alignment: 'center', style: 'subHeadertable'},
+                                      ],
+                                      [{text: item.H.toString(),  style: 'content', fit: true},{text: item.M.toString(),  style: 'content', fit: true},{text: item.T.toString(),  style: 'content', fit: true}]
+
+                                  ]
+                              },
+                          
+                  }],
+                  [{text:'Nombre de ejecución',colSpan: 1, style: 'tableHeader'},{text: item.NOMBREEJECUCION.toString(),  style: 'content', fit: true,colSpan: 3},{},{}],
+                  [{text:'Evidencias', style: 'tableHeader'},{text: item.EVIDENCIAS.toString(),  style: 'content', fit: true,colSpan: 3},{},{}],
+              ]
+          }
+      }
+    })
 
 var dd = {
     pageOrientation: 'landscape',
@@ -298,9 +360,18 @@ var dd = {
 		    alignment:'center',
 		    style: 'subtitle',
 		    margin: [0,20,0,10],
-		    pageBreak: 'after'
+		    
 
 		},
+	    ...body1Propuesta3,
+	    {
+	        text: '',
+		    decoration: 'underline',
+		    alignment:'center',
+		    style: 'subtitle',
+		    margin: [0,20,0,10],
+		    pageBreak: 'after'
+	    },
 		
         ////////// PROPUESTA 3
 		
