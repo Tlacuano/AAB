@@ -1,5 +1,3 @@
-// propuesta 1
-
 // playground requires you to assign document definition to a variable called dd
 // playground requires you to assign document definition to a variable called dd
 
@@ -112,6 +110,8 @@ const array=[
 var dd = {
     pageOrientation: 'landscape',
     
+    
+    ////////// PROPUESTA 1
 	content: [
 		{
 		    text: 'REPORTE DE DOCENTE',
@@ -208,8 +208,14 @@ var dd = {
 		            ...body
 		            
 		        ]
-		    }
+		    },
+		    pageBreak: 'after'
 		},
+		
+        ////////// PROPUESTA 2
+		
+		{}
+		
 		
 	
 	],
