@@ -1,5 +1,4 @@
-// playground requires you to assign document definition to a variable called dd
-// playground requires you to assign document definition to a variable called dd
+
 
 const array=[
         {
@@ -82,6 +81,52 @@ const array=[
 		    {text: item.FOLIO_DE_SOLICITUD.toString(),  style: 'content', fit: true},
 		    {text: item.ENLACE_DE_SOLICITUD.toString(),  style: 'content', fit: true},
 		    {text: item.ESTADO.toString(),  style: 'content', fit: true},
+		    {text: item.NOMBRE_EJECUCION.toString(),  style: 'content', fit: true},
+		    {text: item.EVIDENCIAS.toString(),  style: 'content', fit: true},
+		    {text: item.JUSTIFICACION.toString(),  style: 'content', fit: true},
+		    {text: item.PERIODO_DE_APLICACION.toString(),  style: 'content', fit: true},
+		    {text:item.FECHA_DE_FINALIZACION.toString(), style: 'content', fit: true},
+		       [
+					{
+						table: {
+						widths: ['*','*','*'],
+						body: [
+							[
+								{text:item.PARTICIPANTES.HOMBRES.toString(),  style: 'content', fit: true},
+								{text:item.PARTICIPANTES.MUJERES.toString(), style: 'content', fit: true},
+								{text:item.PARTICIPANTES.TOTAL.toString(), style: 'content', fit: true},
+							],
+
+						]
+					},
+								
+				},
+							
+			],
+        ]
+    })
+    
+    
+    ////////////////////////////////////////////////////////////////////
+    
+    const body1Propuesta2 = array.map( item => {
+        return [
+            {text: item.ID.toString(),  style: 'content', fit: true},
+		    {text: item.NOMBRE.toString(),  style: 'content', fit: true},
+		    {text: item.AREA.toString(), style: 'content', fit: true},
+		    {text: item.COSTO_APROXIMADO.toString(), style: 'content', fit: true},
+		    {text: item.MES_DE_PLANIFICACION.toString(),  style: 'content', fit: true},
+		    {text: item.PROGRAMA_EDUCATIVO.toString(),  style: 'content', fit: true},
+		    {text: item.NUMERO_DE_DOCENTES.toString(),  style: 'content', fit: true},
+		    {text: item.FOLIO_DE_SOLICITUD.toString(),  style: 'content', fit: true},
+		    {text: item.ENLACE_DE_SOLICITUD.toString(),  style: 'content', fit: true},
+		    {text: item.ESTADO.toString(),  style: 'content', fit: true}
+        ]
+    })
+    
+    const body2Propuesta2 = array.map( item => {
+        return [
+            {text: item.ID.toString(),  style: 'content', fit: true},
 		    {text: item.NOMBRE_EJECUCION.toString(),  style: 'content', fit: true},
 		    {text: item.EVIDENCIAS.toString(),  style: 'content', fit: true},
 		    {text: item.JUSTIFICACION.toString(),  style: 'content', fit: true},
@@ -211,11 +256,166 @@ var dd = {
 		    },
 		    pageBreak: 'after'
 		},
+		//////////PROPUESTA 2
 		
-        ////////// PROPUESTA 2
+		{
+		    text: 'REPORTE DE DOCENTE',
+		    style: 'header',
+		    alignment: 'center',
+		    
+		    
+		},
 		
-		{}
+		{
+		    text: 'Periodo:',
+		    style: 'subtitle',
+		    margin: [0,20,0,5],
+		},
 		
+		{
+		    table:{
+		        widths: ['*'],
+		        body: [
+		            [{text: 'Infirmacion',alignment: 'center', style:'headerTable' }],
+		        ]
+		    }
+		},
+		{
+		    table:{
+		        widths: ['auto','*'],
+		        body:[
+		            ['Nombre',''],
+		            ['CURP',''],
+		            ['Sexo',''],
+		            ['Capacitaciones',''],
+		        ]
+		    }
+		},
+		
+		{
+		    text: 'Listado de Capacitaciones',
+		    decoration: 'underline',
+		    alignment:'center',
+		    style: 'subtitle',
+		    margin: [0,20,0,10],
+		    pageBreak: 'after'
+
+		},
+		
+        ////////// PROPUESTA 3
+		
+		{
+		    text: 'REPORTE DE DOCENTE',
+		    style: 'header',
+		    alignment: 'center',
+		    
+		    
+		},
+		
+		{
+		    text: 'Periodo:',
+		    style: 'subtitle',
+		    margin: [0,20,0,5],
+		},
+		
+		{
+		    table:{
+		        widths: ['*'],
+		        body: [
+		            [{text: 'Infirmacion',alignment: 'center', style:'headerTable' }],
+		        ]
+		    }
+		},
+		{
+		    table:{
+		        widths: ['auto','*'],
+		        body:[
+		            ['Nombre',''],
+		            ['CURP',''],
+		            ['Sexo',''],
+		            ['Capacitaciones',''],
+		        ]
+		    }
+		},
+		
+		{
+		    text: 'Listado de Capacitaciones',
+		    decoration: 'underline',
+		    alignment:'center',
+		    style: 'subtitle',
+		    margin: [0,20,0,10],
+		},
+		
+		
+		{
+		    table:{
+		        widths: ['auto','*','*','*','*','*','*','*','*','auto'],
+		        headerRows: 1,
+		        body:[
+		            [{text: 'PLANEACIÓN', colSpan: 10, alignment: 'center'},{},{},{},{},{},{},{},{},{}],
+		            [
+		                {text:'ID', alignment: 'center', style: 'subHeadertable'},
+		                {text:'NOMBRE', alignment: 'center', style: 'subHeadertable'},
+		                {text:'AREA', alignment: 'center', style: 'subHeadertable'},
+		                {text:'COSTO APROXIMADO', alignment: 'center', style: 'subHeadertable'},
+		                {text:'MES DE PLANIFICACION', alignment: 'center', style: 'subHeadertable'},
+		                {text:'PROGRAMA EDUCATIVO', alignment: 'center', style: 'subHeadertable'},
+		                {text:'NUMERO DE DOCENTES', alignment: 'center', style: 'subHeadertable'},
+		                {text:'FOLIO DE SOLICITUD', alignment: 'center', style: 'subHeadertable'},
+		                {text:'ENLACE DE SOLICITUD', alignment: 'center', style: 'subHeadertable'},
+		                {text:'ESTADO', alignment: 'center', style: 'subHeadertable'},
+		            ],
+		            ...body1Propuesta2
+		        ]
+		    },
+		},
+		{
+		    table:{
+		        widths: ['auto','*','*','*','*','*','auto'],
+		        headerRows: 1,
+		        body:[
+		            [{text: 'EJECUCIÓN', colSpan: 7, alignment: 'center'},{},{},{},{},{},{}],
+		            [
+		                {text:'ID', alignment: 'center', style: 'subHeadertable'},
+		                {text:'NOMBRE EJECUCION', alignment: 'center', style: 'subHeadertable'},
+		                {text:'EVIDENCIAS', alignment: 'center', style: 'subHeadertable'},
+		                {text:'JUSTIFICACION', alignment: 'center', style: 'subHeadertable'},
+		                {text:'PERIODO DE APLICACION', alignment: 'center', style: 'subHeadertable'},
+		                {text:'FECHA DE FINALIZACION', alignment: 'center', style: 'subHeadertable'},
+		                [
+		                    {
+		                        table: {
+								    widths: ['*'],
+									body: [
+										[
+										    {text:'PARTICIPACION', alignment: 'center', style: 'subHeadertable'},
+
+										],
+
+									]
+								},
+		                    },
+							{
+								table: {
+								    widths: ['*','*','*'],
+									body: [
+										[
+										    {text:'H', alignment: 'center', style: 'subHeadertable'},
+										    {text:'M', alignment: 'center', style: 'subHeadertable'},
+										    {text:'T', alignment: 'center', style: 'subHeadertable'},
+										],
+
+									]
+								},
+								
+							},
+							
+						],
+		            ],
+		            ...body2Propuesta2
+		        ]
+		    },
+		},
 		
 	
 	],
@@ -227,7 +427,8 @@ var dd = {
 	    },
 	    headerTable:{
 	        bold: true,
-	        fontSize: 15
+	        fontSize: 15,
+	        fillColor: 'gray'
 	    },
 	    subtitle:{
 	        fontSize: 15
@@ -239,7 +440,29 @@ var dd = {
 	    content:{
 	        fontSize: 4.5,
 	        bold: true
-	    }
+	    },
+		subHeader: {
+			fontSize: 20,
+			bold: true,
+			alignment: 'justify',
+			margin: [0, 20, 0, 20],
+			decoration: 'underline'
+		},
+		infoHeader: {
+			fontSize: 15,
+			bold: true,
+			alignment: 'justify',
+			margin: [0,0,0,10]
+		},
+		costTableHeader: {
+			fontSize: 12,
+			bold: true,
+			alignment: 'justify'
+		},
+		costTableInfo: {
+		    fontSize: 10
+		}
+	
 	},
 	
 }
