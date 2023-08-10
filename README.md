@@ -1,7 +1,7 @@
 # AAB
 
 ///ALIAS////
-Prototipo Control de Constancias
+red social
 
 
 ///CONTROL///
